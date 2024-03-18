@@ -48,11 +48,11 @@
 </form>
 <form name="frmRegister" method="post" action="registerpage.php">
 	<!-- Button to open the modal login form -->
-	<button onclick="document.getElementById('id01').style.display='block'">Register</button>
+	<button onclick="document.getElementById('id02').style.display='block'">Register</button>
    
 	<!-- The Modal -->
-	<div id="id01" class="modal">
-	  <span onclick="document.getElementById('id01').style.display='none'"
+	<div id="id02" class="modal">
+	  <span onclick="document.getElementById('id02').style.display='none'"
 	class="close" title="Close Modal">&times;</span>
 	
 	  <!-- Modal Content -->
@@ -72,13 +72,79 @@
 		</div>
 	
 		<div class="container" style="background-color:#f1f1f1">
-		  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+		  <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
 		  <span class="psw">Forgot <a href="#">password?</a></span>
 		</div>
 	  </form>
 	</div> 
    </form>
 </fieldset>
+<fieldset>
+	<legend>Save Generated Password</legend>
+	<form name="frmPassword" method="post" action="passwordpage.php">
+	<!-- Button to open the modal login form -->
+	<button onclick="document.getElementById('id03').style.display='block'">Save Password</button>
+   
+	<!-- The Modal -->
+	<div id="id03" class="modal">
+	  <span onclick="document.getElementById('id03').style.display='none'"
+	class="close" title="Close Modal">&times;</span>
+	
+	  <!-- Modal Content -->
+	  <form class="modal-content animate" action="/action_page.php">
+		<div class="imgcontainer">
+		  <img src="img_avatar2.png" alt="Avatar" class="avatar">
+		</div>
+	
+		<div class="container">
+		  <label for="pwd"><b>Password</b></label>
+		  <input type="text" placeholder="Enter Password to Save" name="txtpwd" id="txtpwd" required>
+	
+		  <input type="submit" name="Submit" id="Submit" value="Submit">
+		</div>
+	
+		<div class="container" style="background-color:#f1f1f1">
+		  <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+		  <span class="psw">Forgot <a href="#">password?</a></span>
+		</div>
+	</form>
+	</fieldset>
+	<fieldset>
+		<legend>Update Security Questions</legend>
+		<form name="frmPassword" method="post" action="securitypage.php">
+		<!-- Button to open the modal login form -->
+		<button onclick="document.getElementById('id04').style.display='block'">Update</button>
+	   
+		<!-- The Modal -->
+		<div id="id04" class="modal">
+		  <span onclick="document.getElementById('id04').style.display='none'"
+		class="close" title="Close Modal">&times;</span>
+		
+		  <!-- Modal Content -->
+		  <form class="modal-content animate" action="/action_page.php">
+			<div class="imgcontainer">
+			  <img src="img_avatar2.png" alt="Avatar" class="avatar">
+			</div>
+		
+			<div class="container">
+			  <label for="q1"><b>Question 1</b></label>
+			  <input type="text" placeholder="Name of first Pet" name="txtq1" id="txtq1" required>
+
+			  <label for="q2"><b>Question 2</b></label>
+			  <input type="text" placeholder="High School Name" name="txtq2" id="txtq2" required>
+
+			  <label for="q3"><b>Question 3</b></label>
+			  <input type="text" placeholder="Mother's Maiden Name" name="txtq3" id="txtq3" required>
+		
+			  <input type="submit" name="Submit" id="Submit" value="Submit">
+			</div>
+		
+			<div class="container" style="background-color:#f1f1f1">
+			  <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn">Cancel</button>
+			  <span class="psw">Forgot <a href="#">password?</a></span>
+			</div>
+		</form>
+		</fieldset>
 
 
 

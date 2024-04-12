@@ -8,14 +8,9 @@
 		<title>Fifteen Puzzle</title>
 		<link rel="stylesheet" href="styles.css" />
 		<script src="script.js"></script>
-		<!--<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>-->
-
 	</head>
-	
-	
+	<body>	
 		<div class="container">
-
-
 		<h1>Password Puzzle</h1>
 		<p class="instructions">All-randomized secure password generator <br /></p>
 		<p id="timer">00:00 </p>
@@ -26,8 +21,6 @@
 				<div>5</div>  <div>6</div>  <div>7</div>  <div>8</div>
                 <div>9</div>  <div>10</div> <div>11</div> <div>12</div>
 				<div>13</div> <div>14</div> <div>15</div>
-		
-		
 			</div> </img>
 			<div id="control">
 			<button id="shufflebutton">Shuffle</button>
@@ -39,10 +32,7 @@
 			<img id="musicbutton" class="musicbutton" src="music.png" />
 			</div>
 			<div id="celebrate"></div>
-
 		</div>
-		<p class="instructions"> <br />.</p>
-
 				<h1 class="title">Sove the puzzle! than you will get the password</h1>
 			<h3 class="password-display" id="passwordDisplay">password</h3>
 			<form id="passwordGeneratorForm" class="form">
@@ -51,34 +41,29 @@
 				<input type="range" min="1" max="50" value="10" id="characterAmountRange">
 				<input class="number-input" type="number" min="1" max="50" value="10" id="characterAmountNumber">
 			  </div>
-		
 			  <label for="includeUppercase">Include Uppercase</label>
 			  <input type="checkbox" id="includeUppercase">
-		
 			  <label for="includeNumbers">Include Numbers</label>
 			  <input type="checkbox" id="includeNumbers">
-		
 			  <label for="includeSymbols">Include Symbols</label>
 			  <input type="checkbox" id="includeSymbols">
-		
 			  <button type="submit" class="btn">Generate Password</button>
-			  <fieldset>
-				<legend>Login or Register</legend>
-				<form name="frmLogin" method="post" action="loginpage.php">
+			  <br></br>
+			  <div>
+<fieldset>
+<legend>Login or Register</legend>
+<form name="frmLogin" method="post" action="loginpage.php">
 	 <!-- Button to open the modal login form -->
 	 <button onclick="document.getElementById('id01').style.display='block'">Login</button>
-	
 	 <!-- The Modal -->
 	 <div id="id01" class="modal">
 	   <span onclick="document.getElementById('id01').style.display='none'"
 	 class="close" title="Close Modal">&times;</span>
-	 
 	   <!-- Modal Content -->
 	   <form class="modal-content animate" action="/action_page.php">
 		 <div class="imgcontainer">
 		   <img src="img_avatar2.png" alt="Avatar" class="avatar">
 		 </div>
-	 
 		 <div class="container">
 		   <label for="uname"><b>Username</b></label>
 		   <input type="text" placeholder="Enter Username" name="txtuname" id="txtuname" required>
@@ -88,7 +73,6 @@
 	 
 		   <input type="submit" name="Submit" id="Submit" value="Submit">
 		 </div>
-	 
 		 <div class="container" style="background-color:#f1f1f1">
 		   <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
 		   <span class="psw">Forgot <a href="#">password?</a></span>
@@ -99,7 +83,7 @@
 	<form name="frmRegister" method="post" action="registerpage.php">
 		<!-- Button to open the modal login form -->
 		<button onclick="document.getElementById('id02').style.display='block'">Register</button>
-	   
+
 		<!-- The Modal -->
 		<div id="id02" class="modal">
 		  <span onclick="document.getElementById('id02').style.display='none'"
@@ -110,7 +94,6 @@
 			<div class="imgcontainer">
 			  <img src="img_avatar2.png" alt="Avatar" class="avatar">
 			</div>
-		
 			<div class="container">
 			  <label for="uname"><b>Username</b></label>
 			  <input type="text" placeholder="Enter Username" name="txtuname" id="txtuname" required>
@@ -129,6 +112,7 @@
 		</div> 
 	   </form>
 	</fieldset>
+	<br></br>
 	<fieldset>
 		<legend>Save Generated Password</legend>
 		<form name="frmPassword" method="post" action="passwordpage.php">
@@ -159,6 +143,7 @@
 			</div>
 		</form>
 		</fieldset>
+		<br></br>
 		<fieldset>
 			<legend>Update Security Questions</legend>
 			<form name="frmPassword" method="post" action="securitypage.php">
@@ -195,8 +180,7 @@
 				</div>
 			</form>
 			</fieldset>
-	
-	
-	
+		</div>
+
 	</body>
 </html>

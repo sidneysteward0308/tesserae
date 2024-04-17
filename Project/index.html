@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Password Puzzle</title>
+	<link rel=" stylesheet" href="styles.css">
+	<script defer src="script.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div id="dropdownmenu">
+			<div class="dropdown">
+				<button class="dropbtn">&#9776;</button>
+				<div class="dropdown-content">
+					<button id="openLoginModal">Login</button>
+					<button id="openRegisterModal">Register</button>
+					<button id="logoutButton" style="display: none;">Logout</button>
+					<button id="passwordsButton" style="display: none;">Passwords</button>
+					<button id="imagesButton" style="display: none;">Images</button>
+				</div>
+			</div>
+		</div>
+		<h1>Tesserae</h1>
+		<p class="instructions">All-randomized secure password generator</p>
+		<h3 id="gist">Solve the puzzle to generate a password!</h3>
+		<p id="timer">00:00</p>
+		<div id="main">
+			<div id="puzzle">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+				<div>6</div>
+				<div>7</div>
+				<div>8</div>
+				<div>9</div>
+				<div>10</div>
+				<div>11</div>
+				<div>12</div>
+				<div>13</div>
+				<div>14</div>
+				<div>15</div>
+			</div>
+			<div id="control">
+				<button id="shufflebutton">Shuffle</button>
+				<button id="changeImg">Change Image</button>
+				<button id="openImageUploadModal" style="display: none;">Upload Image</button>
+				<button id="resetButton">Reset</button>
+				<audio id="myAudio" src="music.mp3"></audio>
+				<img id="musicbutton" class="musicbutton" src="music.png" alt="">
+			</div>
+			<button id="generatePasswordButton">Solve Puzzle</button>
+			<div id="celebrate"></div>
+		</div>
+		<div>
+			<h3 class="password-display" id="passwordDisplay">password
+			</h3>
+			<button id="savePasswordButton" style="display: none;">Save Password</button>
+		</div>
+
+		<form id="passwordGeneratorForm" class="form">
+			<div class="label-container">
+				<label for="characterAmountNumber">Number Of Characters</label>
+				<div class="character-amount-container">
+					<input type="range" min="1" max="50" value="10" id="characterAmountRange">
+					<input class="number-input" type="number" min="1" max="50" value="10" id="characterAmountNumber">
+				</div>
+			</div>
+
+			<label>
+				<span>Include Uppercase</span>
+				<input type="checkbox" id="includeUppercase" class="custom-checkbox">
+			</label>
+			<label>
+				<span>Include Numbers</span>
+				<input type="checkbox" id="includeNumbers" class="custom-checkbox">
+			</label>
+			<label>
+				<span>Include Symbols</span>
+				<input type="checkbox" id="includeSymbols" class="custom-checkbox">
+			</label>
+		</form>
+		<!-- Login Modal -->
+		<div id="loginModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<div class="modal-body">
+					<h2>Login</h2>
+					<form id="loginForm" method="post" action="php/loginpage.php">
+						<label for="username">Username</label>
+						<input type="text" id="username" name="txtuname" placeholder="username" required>
+						<label for="password">Password</label>
+						<input type="password" id="password" name="txtpwd" placeholder="password" required>
+						<button type="submit">Login</button>
+					</form>
+					<span id="forgotpassword">
+						<a href="#" id="forgotPasswordLink">Forgot Password?</a>
+					  </span>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Register Modal -->
+		<div id="registerModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<div class="modal-body">
+					<h2>Register</h2>
+					<form id="registerForm" method="POST" action="php/registerpage.php">
+						<input type="text" id="newUsername" name="txtuname" placeholder="username" required>
+						<input type="password" id="newPassword" name="txtpwd" placeholder="password" required>
+						<button type="button" id="continueButton">Continue</button>
+						<div id="securityQuestionsContainer" style="display: none;">
+							<input type="text" id="question1" name="txtq1" placeholder="Name of First Pet" required>
+							<input type="text" id="question2" name="txtq2" placeholder="High School Name" required>
+							<input type="text" id="question3" name="txtq3" placeholder="Mother's Maiden Name" required>
+							<button type="submit" id="submitregister">Register</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="passwordsModal" class="modal">
+			<div class="modal-content">
+			  <span class="close">&times;</span>
+			  <div class="modal-body">
+				<h2>Generated Passwords</h2>
+				<table id="passwordsTable">
+				  <thead>
+					<tr>
+					  <th>Identifier</th>
+					  <th>Password</th>
+					  <th>Creation Date</th>
+					</tr>
+				  </thead>
+				  <tbody id="passwordsTableBody"></tbody>
+				</table>
+			  </div>
+			</div>
+		  </div>
+
+		  <div id="forgotPasswordModal" class="modal">
+			<div class="modal-content">
+			  <span class="close">&times;</span>
+			  <div class="modal-body">
+				<h2>Forgot Password</h2>
+				<form id="forgotPasswordForm">
+				  <label for="forgotUsername">Username</label>
+				  <input type="text" id="forgotUsername" name="forgotUsername" placeholder="Enter your username" required>
+				  <button type="submit">Next</button>
+				</form>
+				<div id="securityQuestionsContainerr" style="display: none;">
+				  <h3>Answer Security Questions</h3>
+				  <input type="text" id="forgotQuestion1" name="forgotQuestion1" placeholder="Name of First Pet" required>
+				  <input type="text" id="forgotQuestion2" name="forgotQuestion2" placeholder="High School Name" required>
+				  <input type="text" id="forgotQuestion3" name="forgotQuestion3" placeholder="Mother's Maiden Name" required>
+
+				  <button type="button" id="verifyAnswersButton">Verify Answers</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+
+		<div id="resetPasswordModal" class="modal">
+			<div class="modal-content">
+			  <span class="close">&times;</span>
+			  <div class="modal-body">
+				<h2>Reset Password</h2>
+				<form id="resetPasswordForm">
+				  <input type="password" id="newwPassword" name="newPassword" placeholder="New Password" required>
+				  <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm New Password" required>
+				  <button type="submit">Reset Password</button>
+				</form>
+			  </div>
+			</div>
+		  </div>
+
+		 <div id="imageUploadModal" class="modal">
+			<div class="modal-content">
+			  <span class="close">&times;</span>
+			  <div class="modal-body">
+				<h2>Upload Image</h2>
+				<form id="imageUploadForm" enctype="multipart/form-data">
+				  <input type="file" id="imageFile" name="imageFile" accept="image/*" required>
+				  <button type="submit">Upload</button>
+				</form>
+			  </div>
+			</div>
+		  </div>
+
+		  <div id="imagesModal" class="modal">
+			<div class="modal-content">
+			  <span class="close">&times;</span>
+			  <div class="modal-body">
+				<h2>Uploaded Images</h2>
+				<div id="imageGallery"></div>
+			  </div>
+			</div>
+		  </div>
+	</div>
+</body>
+
+</html>

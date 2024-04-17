@@ -1,0 +1,516 @@
+body {
+  background-color: #333;
+  margin: 0;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1,
+.instructions {
+  margin: 10px 0px;
+  text-align: center;
+}
+
+#gist {
+  font-size: larger;
+}
+
+#control {
+  padding-left: 100px;
+
+}
+
+#imageupload {
+  padding-top: 10px;
+}
+
+
+#control,
+#puzzle {
+  width: 400px;
+}
+
+#control,
+#moves,
+#movess {
+  padding-top: 10px;
+  text-align: center;
+}
+
+
+#main {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  transition: 0.5s ease;
+  z-index: 10;
+}
+
+#celebrate {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(221, 250, 221);
+  text-align: center;
+  margin-top: 20px;
+
+}
+
+#puzzle {
+  font-family: sans-serif;
+  font-size: 24pt;
+  height: 400px;
+  width: 400px;
+  padding: 0px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.puzzlepiece {
+  background-image: url(images/ourImage.jpg);
+  border: 2px solid black;
+  height: 96px;
+  width: 96px;
+  line-height: 96px;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.puzzlepiecehover {
+  border-color: red;
+  color: #660066;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+.musicbutton {
+  width: 0px;
+  height: 0px;
+}
+
+#timer {
+  text-align: center;
+}
+
+#image {
+  z-index: 100;
+  position: relative;
+  float: right;
+  transform: translate(-690px, 15px);
+}
+
+.container {
+  background-color: #006699;
+  padding: 3rem;
+  border-radius: 1rem;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 800px;
+  /* Increase the max-width value */
+  width: 90%;
+  /* Add a width property */
+  margin: 0 auto;
+  /* Center the container horizontally */
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.form label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.label-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.character-amount-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.custom-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid white;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-checkbox:checked {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: white;
+  background-image: url('checkmark.png');
+}
+
+
+
+.number-input {
+  width: 3rem;
+}
+
+#forgotpassword {
+  display: block;
+  padding-top: 10px;
+}
+
+#dropdownmenu {
+  align-self: flex-start;
+  margin-bottom: 1rem;
+}
+
+.dropbtn {
+  background-color: #006699;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  outline: solid black;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.dropdown-content button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropbtn:hover {
+  background-color: black;
+}
+
+.dropdown-content button:hover {
+  background-color: #ece7e7;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.btn {
+  align-self: center;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+#generatePasswordButton {
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#generatePasswordButton:hover {
+  background-color: #45a049;
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* .character-amount-container {
+  display: flex;
+  align-items: center;
+} */
+
+.number-input {
+  width: 2rem;
+}
+
+.password-display {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border: 1px solid #333;
+  height: 2rem;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  border-radius: 0.5rem;
+}
+
+
+.btn:hover {
+  background-color: #ffffff33;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  border: 1px solid #888;
+  width: 50%;
+  padding: 20px;
+}
+
+.modal-body {
+  text-align: center;
+}
+
+.modal-body h2 {
+  margin-top: 0;
+}
+
+.modal-body form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-body input {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  max-width: 300px;
+}
+
+
+.modal-body button {
+  padding: 10px 20px;
+  background-color: #006699;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-body button:hover {
+  background-color: #004466;
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+}
+
+
+
+.modal-body h2 {
+  color: black;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+#openLoginModal {
+  margin-top: 5px;
+}
+
+#openRegisterModal {
+  margin-top: 10px;
+}
+
+#submitregister {
+  display: block;
+  margin-left: 190px;
+}
+
+#passwordsButton {
+  margin-top: 10px;
+}
+
+#passwordsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#passwordsList li {
+  margin-bottom: 10px;
+}
+
+#savePasswordButton{
+  margin-bottom: 10px;
+}
+
+#passwordsList li {
+  color: black;
+  margin-bottom: 10px;
+}
+
+#passwordsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#passwordsTable th,
+#passwordsTable td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#passwordsTable th {
+  background-color: #006699;
+}
+
+#passwordsTable td {
+  color: black;
+}
+
+#forgotPasswordModal .modal-content {
+  width: 400px;
+}
+
+#securityQuestionsContainerr {
+  margin-top: 20px;
+}
+
+#securityQuestionsContainerr input {
+  margin-bottom: 10px;
+}
+
+#securityQuestionsContainerr h3{
+  color: black;
+  font-size:medium;
+}
+
+
+#imageGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 10px;
+}
+
+#imageGallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+#imageGallery img:hover {
+  transform: scale(1.05);
+}
+
+#imagesButton{
+  margin-top: 10px;
+}
+
+#imageFile{
+  margin-left: 130px;
+  color: black;
+}
+
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes puzzlePieceMove {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(var(--moveX), var(--moveY));
+  }
+}
+
+.puzzlepiece-animation {
+  animation: puzzlePieceMove 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
